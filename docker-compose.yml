@@ -1,0 +1,14 @@
+services:
+  kfs:
+    platform: linux/amd64
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: kfs2-dev
+    working_dir: /kfs
+    volumes:
+      - .:/kfs
+    ports:
+      - "5901:5901"
+    stdin_open: true
+    tty: true
